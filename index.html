@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاور تحصیلی آیو</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shabnam:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Shabnam', sans-serif;
+            background-color: #f7fbfc;
+            direction: rtl;
+            text-align: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            flex-direction: column;
+        }
+
+        .chat-container {
+            width: 700px;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .chat-box {
+            width: 100%;
+            height: 500px;
+            background-color: #f7fbfc;
+            border: 2px solid #a8dadc;
+            border-radius: 8px;
+            padding: 10px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .welcome-message {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            width: 100%;
+            height: 60px;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid #457b9d;
+            resize: none;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .send-button {
+            background-color: #457b9d;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .send-button:hover {
+            background-color: #1d3557;
+        }
+
+        .confirmation-label {
+            font-size: 10px;
+            color: green;
+            font-weight: bold;
+            display: none;
+            margin-top: 5px;
+        }
+
+        .response-buttons {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .response-buttons button {
+            background-color: transparent;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .response-buttons button:hover {
+            background-color: #f1f1f1;
+        }
+
+        .user-message {
+            color: #e91e63;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .bot-message {
+            color: #1565c0;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .question-text {
+            margin-bottom: 20px;
+        }
+
+        #chat-form {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        #user-input {
+            width: 85%;
+            height: 50px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #457b9d;
+            font-size: 14px;
+            font-weight: bold;
+            direction: rtl;
+            text-align: right;
+        }
+
+        #send-button {
+            width: 12%;
+            background-color: #457b9d;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #send-button:hover {
+            background-color: #1d3557;
+        }
+
+        /* Popup Styles */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .popup input {
+            margin: 10px;
+            padding: 10px;
+            font-size: 14px;
+            width: 80%;
+        }
+
+        .popup button {
+            padding: 10px;
+            background-color: #457b9d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .popup button:hover {
+            background-color: #1d3557;
+        }
+
+        .left-buttons {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .left-buttons button {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .left-buttons button:hover {
+            background-color: #f1f1f1;
+        }
+
+        .name-highlight {
+            color: #e91e63; 
+        }
+
+        .robot-emoji {
+            font-size: 30px;
+        }
+
+        .welcome-message h1 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h3>لطفاً نام خود را وارد کنید</h3>
+            <input type="text" id="userName" placeholder="نام خود را وارد کنید" />
+            <h3>لطفاً شماره تلفن خود را وارد کنید</h3>
+            <input type="text" id="userPhone" placeholder="شماره تلفن خود را وارد کنید" />
+            <button id="submitDetails">ارسال</button>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-box" id="chatBox">
+            <div class="welcome-message" id="welcomeMessage">
+                <span class="robot-emoji">🤖</span>
+                <span id="dynamicName">حسن جان</span> به 
+                <span style="color: #1565c0; font-weight: bold;">ربات مشاور تحصیلی آیو</span> خوش آمدید! 🎉<br>
+                <span style="color: #2e8b57;">لطفا درخواست خود را تایپ و ارسال کنید.</span>
+            </div>
+        </div>
+        
+        <form id="chat-form">
+            <input type="text" id="user-input" name="message" placeholder="لطفا درخواست خود را وارد کنید">
+            <button type="submit" id="send-button">ارسال</button>
+        </form>
+
+        <div id="confirmationLabel" class="confirmation-label"></div>
+    </div>
+
+    <script>
+        // ایموجی‌های تصادفی برای سوالات و پاسخ‌ها
+        const emojisQuestion = ["🎓", "📘", "📚", "📝", "📖"];
+        const emojisResponse = ["✅", "🎯", "📅", "🧠", "💡"];
+
+        function getRandomEmoji(emojis) {
+            const randomIndex = Math.floor(Math.random() * emojis.length);
+            return emojis[randomIndex];
+        }
+
+        
+        document.getElementById('submitDetails').addEventListener('click', () => {
+            const userName = document.getElementById('userName').value;
+            const userPhone = document.getElementById('userPhone').value;
+            if (userName && userPhone) {
+                document.getElementById('popup').style.display = 'none';
+                document.getElementById('dynamicName').innerHTML = `${userName} جان (${userPhone})`;
+            }
+        });
+
+        function convertToPersianNumbers(text) {
+            const persianNumbers = {
+                "0": "۰", "1": "۱", "2": "۲", "3": "۳", "4": "۴", "5": "۵", "6": "۶", "7": "۷", "8": "۸", "9": "۹"
+            };
+            for (const [english, persian] of Object.entries(persianNumbers)) {
+                text = text.replace(new RegExp(english, 'g'), persian);
+            }
+            return text;
+        }
+
+        function typingEffect(response, chatBox) {
+            let index = 0;
+            chatBox.innerHTML += "<br>";
+            const interval = setInterval(() => {
+                chatBox.innerHTML += response[index++];
+                chatBox.scrollTop = chatBox.scrollHeight;
+                if (index === response.length) {
+                    clearInterval(interval);
+                    addResponseButtons(chatBox);
+                }
+            }, 50);
+        }
+
+        function addResponseButtons(chatBox) {
+            const buttons = document.createElement("div");
+            buttons.classList.add("response-buttons");
+            buttons.innerHTML = ` 
+                <button onclick="likeAction(this)">👍</button>
+                <button onclick="dislikeAction(this)">👎</button>
+                <button onclick="copyAction()">📋</button>
+            `;
+            chatBox.appendChild(buttons);
+        }
+
+        function likeAction(button) {
+            button.style.backgroundColor = 'green';
+            button.disabled = true;
+        }
+
+        function dislikeAction(button) {
+            button.style.backgroundColor = 'red';
+            button.disabled = true;
+        }
+
+        function copyAction() {
+            const text = document.getElementById("chatBox").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const confirmationLabel = document.getElementById("confirmationLabel");
+                confirmationLabel.innerText = "کپی شد";
+                confirmationLabel.style.display = "block";
+                setTimeout(() => {
+                    confirmationLabel.style.display = "none";
+                }, 2000);
+            });
+        }
+
+        document.getElementById("chat-form").addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const userInput = document.getElementById("user-input").value;
+
+            if (!userInput.trim()) {
+                document.getElementById("chatBox").innerHTML += "<p>لطفاً یک پیام وارد کنید.</p>";
+                return;
+            }
+
+            // انتخاب ایموجی تصادفی برای سوال
+            const questionEmoji = getRandomEmoji(emojisQuestion);
+            const chatBox = document.getElementById("chatBox");
+            chatBox.innerHTML += `<div class="user-message question-text">درخواست شما: ${userInput} ${questionEmoji}</div>`;
+            document.getElementById("user-input").value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: new URLSearchParams({ message: userInput }),
+            });
+
+            const data = await response.json();
+            const botResponse = convertToPersianNumbers(data.response);
+
+            // انتخاب ایموجی تصادفی برای پاسخ
+            const responseEmoji = getRandomEmoji(emojisResponse);
+            typingEffect(`${botResponse} ${responseEmoji}`, chatBox);
+        });
+    </script>
+</body>
+</html>

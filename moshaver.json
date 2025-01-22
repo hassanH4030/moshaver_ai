@@ -1,0 +1,600 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "سلام",
+                "خوبی؟",
+                "کسی هست؟",
+                "سلام چطوری؟",
+                "مشاور رشته هستید؟",
+                "روز بخیر",
+                "درود بر شما",
+                "سلام مشاور محترم"
+            ],
+            "responses": [
+                "سلام! چطور می‌توانم کمکتان کنم؟",
+                "درود! چه اطلاعاتی درباره انتخاب رشته نیاز دارید؟",
+                "سلام، خوش آمدید! برای شروع لطفاً سوالتان را مطرح کنید.",
+                "سلام! آماده‌ام تا به سوالات شما درباره انتخاب رشته پاسخ دهم."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "ممنون",
+                "خیلی ممنون",
+                "تشکر",
+                "سپاسگزارم",
+                "مرسی",
+                "قدردانی می‌کنم",
+                "خیلی لطف کردید",
+                "متشکرم"
+            ],
+            "responses": [
+                "خواهش می‌کنم!",
+                "هر زمان که نیاز داشتید!",
+                "باعث خوشحالی من است.",
+                "من اینجا هستم تا کمک کنم."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "engineering",
+            "patterns": [
+                "مهندسی چه رشته‌ هایی دارد؟",
+                "مهندسی مناسب برای من چیست؟",
+                "می‌خواهم مهندسی بخوانم",
+                "آیا مهندسی کامپیوتر خوب است؟",
+                "رشته مهندسی مکانیک برای چه کسانی مناسب است؟"
+            ],
+            "responses": [
+                "مهندسی گزینه عالی است! می‌توانید مهندسی کامپیوتر، برق، مکانیک، شیمی، هوافضا یا عمران را بررسی کنید.",
+                "برای مهندسی، ریاضیات و فیزیک قوی مهم هستند. آیا در این دروس نمرات خوبی دارید؟",
+                "مهندسی کامپیوتر برای علاقه‌مندان به برنامه‌نویسی و فناوری اطلاعات بسیار مناسب است.",
+                "مهندسی شیمی بیشتر برای کسانی که به شیمی و فرآیندهای صنعتی علاقه دارند توصیه می‌شود.",
+                "رشته مهندسی مکانیک برای طراحی و تولید سیستم‌های مکانیکی مناسب است."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "medical",
+            "patterns": [
+                "پزشکی برای چه کسانی مناسب است؟",
+                "آیا پزشکی سخت است؟",
+                "پزشکی بخوانم یا دندان‌پزشکی؟",
+                "رشته‌های مرتبط با پزشکی چیست؟",
+                "علاقه به زیست‌شناسی دارم، چه کنم؟"
+            ],
+            "responses": [
+                "پزشکی نیاز به نمرات بالا در زیست‌شناسی و شیمی دارد. آیا در این دروس عملکرد خوبی دارید؟",
+                "علاقه به پزشکی؟ شما می‌توانید به رشته‌هایی مانند پزشکی عمومی، دندان‌پزشکی یا داروسازی فکر کنید.",
+                "پزشکی نیاز به تلاش و مطالعه مداوم دارد، اما شغل بسیار ارزشمندی است.",
+                "اگر به زیست‌شناسی علاقه دارید، رشته‌هایی مانند ژنتیک، میکروبیولوژی یا زیست‌فناوری را نیز بررسی کنید.",
+                "دندان‌پزشکی برای کسانی که به سلامت دهان و دندان علاقه دارند گزینه‌ای مناسب است."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "medical_specialties",
+            "patterns": [
+                "شاخه‌های پزشکی چیست؟",
+                "تخصص‌های پزشکی کدامند؟",
+                "می‌خواهم متخصص شوم، چه کنم؟",
+                "فرق بین پزشکی عمومی و تخصص چیست؟",
+                "رشته جراحی چیست؟"
+            ],
+            "responses": [
+                "شاخه‌های پزشکی شامل پزشکی عمومی، جراحی، داخلی، کودکان، روان‌پزشکی، پوست و مو، ارتوپدی و بسیاری دیگر است.",
+                "برای متخصص شدن، ابتدا باید پزشکی عمومی را بگذرانید و سپس وارد دوره تخصص شوید.",
+                "جراحی برای کسانی که به کار عملی و درمان بیماران در اتاق عمل علاقه دارند مناسب است.",
+                "پزشکی داخلی بر تشخیص و درمان بیماری‌های داخلی بدن تمرکز دارد.",
+                "روان‌پزشکی برای کسانی که به درمان اختلالات روانی علاقه دارند بسیار جذاب است."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "arts",
+            "patterns": [
+                "رشته‌های هنری چیست؟",
+                "آیا هنر برای من مناسب است؟",
+                "علاقه به طراحی دارم، چه کنم؟",
+                "برای معماری چه ویژگی‌هایی لازم است؟",
+                "رشته گرافیک چگونه است؟"
+            ],
+            "responses": [
+                "رشته‌های مرتبط با هنر شامل طراحی گرافیک، معماری، نقاشی، طراحی صنعتی، موسیقی، و تئاتر هستند.",
+                "آیا در هنرهای تجسمی یا دیجیتال علاقه خاصی دارید؟ این می‌تواند به انتخاب رشته کمک کند.",
+                "برای هنر، تمرکز بر خلاقیت و استعداد هنری مهم است.",
+                "معماری نیاز به توانایی طراحی و درک ساختارهای فیزیکی دارد.",
+                "رشته موسیقی برای کسانی که به آهنگسازی یا نواختن علاقه دارند بسیار مناسب است."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "business_management",
+            "patterns": [
+                "رشته مدیریت چیست؟",
+                "برای ورود به مدیریت چه مهارت‌هایی نیاز است؟",
+                "مدیریت بازرگانی چگونه است؟",
+                "آیا مدیریت مالی سخت است؟",
+                "رشته MBA چیست؟"
+            ],
+            "responses": [
+                "رشته مدیریت گزینه‌ای عالی برای علاقه‌مندان به رهبری و تصمیم‌گیری است.",
+                "مدیریت شامل گرایش‌های مختلفی مثل مدیریت مالی، بازرگانی، منابع انسانی، و ام بی ای است.",
+                "MBA یک مدرک حرفه‌ای است که در سطح بین‌المللی بسیار معتبر است.",
+                "مدیریت مالی برای کسانی که به حسابداری و سرمایه‌گذاری علاقه دارند مناسب است.",
+                "مدیریت بازرگانی به تحلیل بازار و توسعه استراتژی‌های تجاری تمرکز دارد."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "general_advice",
+            "patterns": [
+                "چگونه رشته انتخاب کنم؟",
+                "رشته مناسب من چیست؟",
+                "چگونه علاقه‌ام را پیدا کنم؟",
+                "چه عواملی در انتخاب رشته مهم هستند؟",
+                "چه معیارهایی برای انتخاب رشته وجود دارد؟"
+            ],
+            "responses": [
+                "برای انتخاب رشته، علاقه، توانایی‌ها، و نمرات خود را بررسی کنید.",
+                "به شغل‌هایی که دوست دارید فکر کنید و ببینید کدام رشته شما را به آن نزدیک می‌کند.",
+                "تحقیق درباره بازار کار رشته‌ها می‌تواند به شما کمک کند.",
+                "همچنین می‌توانید از مشاوران تحصیلی کمک بگیرید.",
+                "فعالیت‌های فوق‌برنامه و تجربه‌های کاری مرتبط نیز می‌توانند راهنمای شما باشند."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "science",
+            "patterns": [
+                "رشته‌های علوم پایه چیست؟",
+                "آیا فیزیک برای من مناسب است؟",
+                "علاقه به شیمی دارم، چه کنم؟",
+                "رشته زیست‌شناسی چگونه است؟",
+                "علوم زمین برای چه کسانی مناسب است؟"
+            ],
+            "responses": [
+                "رشته‌های علوم پایه شامل فیزیک، شیمی، زیست‌شناسی، ریاضیات، و علوم زمین هستند.",
+                "فیزیک برای کسانی که به تحلیل مسائل پیچیده و تحقیقات علاقه دارند مناسب است.",
+                "رشته شیمی برای علاقه‌مندان به تحقیق در مواد و واکنش‌های شیمیایی بسیار جذاب است.",
+                "زیست‌شناسی به مطالعه موجودات زنده و فرایندهای زیستی می‌پردازد.",
+                "علوم زمین برای کسانی که به محیط زیست و منابع طبیعی علاقه دارند گزینه‌ای عالی است."
+            ],
+            "context": [""]
+        },
+    
+        {
+            "tag": "math_physics",
+            "patterns": [
+                "رشته ریاضی و فیزیک چیست؟",
+                "آیا رشته ریاضی سخت است؟",
+                "چه شغلی با رشته ریاضی می‌توان داشت؟",
+                "برای ریاضی فیزیک چه توانایی‌هایی نیاز است؟",
+                "رشته ریاضی شامل چه درس‌هایی است؟"
+            ],
+            "responses": [
+                "رشته ریاضی و فیزیک برای علاقه‌مندان به ریاضیات و فیزیک مناسب است. این رشته به مهندسی، فناوری و علوم محاسباتی منتهی می‌شود.",
+                "ریاضیات، فیزیک و شیمی در این رشته از اهمیت بالایی برخوردارند.",
+                "دانش‌آموزانی که به این رشته علاقه دارند، معمولاً در آینده به مهندسی، علوم داده یا فیزیک نظری گرایش پیدا می‌کنند.",
+                "اگر از حل مسائل پیچیده لذت می‌برید، رشته ریاضی و فیزیک برای شما مناسب است."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "humanities",
+            "patterns": [
+                "رشته علوم انسانی چیست؟",
+                "چه کسانی برای علوم انسانی مناسب هستند؟",
+                "علوم انسانی شامل چه درس‌هایی است؟",
+                "شغل‌های مرتبط با علوم انسانی چیست؟",
+                "آیا علوم انسانی بازار کار خوبی دارد؟"
+            ],
+            "responses": [
+                "علوم انسانی به مطالعه رفتارها و ارتباطات انسانی می‌پردازد و شامل رشته‌هایی مانند روان‌شناسی، حقوق، مدیریت و علوم اجتماعی است.",
+                "دانش‌آموزانی که علاقه‌مند به تاریخ، ادبیات و جامعه‌شناسی هستند معمولاً علوم انسانی را انتخاب می‌کنند.",
+                "این رشته می‌تواند شما را به حرفه‌هایی مانند وکالت، روزنامه‌نگاری یا مدیریت منابع انسانی هدایت کند.",
+                "اگر به تحلیل مسائل اجتماعی و انسانی علاقه دارید، این رشته مناسب شماست."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "experimental_sciences",
+            "patterns": [
+                "رشته علوم تجربی چیست؟",
+                "چه دروسی در علوم تجربی مهم هستند؟",
+                "آیا علوم تجربی برای من مناسب است؟",
+                "بازار کار رشته تجربی چطور است؟",
+                "چه مشاغلی با علوم تجربی مرتبط است؟"
+            ],
+            "responses": [
+                "علوم تجربی شامل مطالعه زیست‌شناسی، شیمی و فیزیک است و برای کسانی که به رشته‌های پزشکی، داروسازی و زیست‌شناسی علاقه دارند مناسب است.",
+                "در این رشته، زیست‌شناسی اهمیت بالایی دارد و نمرات آن در انتخاب رشته دانشگاهی تأثیرگذار است.",
+                "مشاغل مرتبط شامل پزشکی، دندان‌پزشکی، داروسازی، پرستاری و علوم آزمایشگاهی است.",
+                "اگر به مطالعه زندگی و فرآیندهای زیستی علاقه دارید، علوم تجربی انتخابی مناسب است."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "art",
+            "patterns": [
+                "رشته هنر چه شاخه‌هایی دارد؟",
+                "چگونه بفهمم هنر برای من مناسب است؟",
+                "برای ورود به رشته هنر چه مهارت‌هایی نیاز است؟",
+                "مشاغل مرتبط با رشته هنر چیست؟",
+                "آیا هنر بازار کار خوبی دارد؟"
+            ],
+            "responses": [
+                "رشته هنر شامل طراحی گرافیک، نقاشی، موسیقی، بازیگری، معماری و طراحی صنعتی است.",
+                "افرادی که خلاقیت و توانایی هنری دارند معمولاً در این رشته موفق می‌شوند.",
+                "مشاغل مرتبط شامل طراح گرافیک، معمار، هنرمند تجسمی و طراح صنعتی است.",
+                "بازار کار هنر بسته به تخصص و توانایی‌های فردی متفاوت است."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "language",
+            "patterns": [
+                "رشته زبان شامل چه چیزهایی است؟",
+                "آیا زبان انگلیسی رشته خوبی است؟",
+                "برای ورود به رشته زبان چه باید کرد؟",
+                "مشاغل مرتبط با رشته زبان چیست؟",
+                "چگونه زبان را حرفه‌ای یاد بگیرم؟"
+            ],
+            "responses": [
+                "رشته زبان به مطالعه زبان‌های خارجی، ادبیات و ترجمه می‌پردازد.",
+                "این رشته برای کسانی که به یادگیری زبان‌های جدید و فرهنگ‌های مختلف علاقه دارند مناسب است.",
+                "مشاغل مرتبط شامل مترجمی، تدریس زبان، روزنامه‌نگاری بین‌المللی و کار در سفارتخانه‌ها است.",
+                "یادگیری زبان نیاز به تمرین مستمر و ارتباط با افراد بومی دارد."
+            ],
+            "context": [""]
+        },
+        
+       
+        
+        {
+            "tag": "subject_selection",
+            "patterns": [
+                "انتخاب رشته چیست؟",
+                "چگونه انتخاب رشته کنم؟",
+                "شاخه‌های تحصیلی کدامند؟",
+                "رشته‌های تحصیلی را نام ببرید",
+                "انتخاب رشته به چه معناست؟"
+            ],
+            "responses": [
+                "انتخاب رشته فرایندی است که دانش‌آموزان پس از پایه نهم با توجه به علاقه و توانایی خود یکی از شاخه‌های تحصیلی را انتخاب می‌کنند. این شاخه‌ها شامل موارد زیر است:",
+                "1. ریاضی و فیزیک: برای علاقه‌مندان به ریاضیات و علوم مهندسی.",
+                "2. علوم تجربی: مناسب برای کسانی که به زیست‌شناسی، شیمی و رشته‌های پزشکی علاقه دارند.",
+                "3. علوم انسانی: گزینه‌ای برای علاقه‌مندان به موضوعات اجتماعی و ادبیات.",
+                "4. هنر: برای کسانی که به خلاقیت و طراحی علاقه‌مندند.",
+                "5. زبان‌های خارجی: مناسب برای علاقه‌مندان به یادگیری زبان‌های جدید و مشاغل بین‌المللی."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "subject_selection_advice",
+            "patterns": [
+                "چگونه رشته مناسب انتخاب کنم؟",
+                "برای انتخاب رشته چه نکاتی را رعایت کنم؟",
+                "رشته مناسب من چیست؟",
+                "انتخاب رشته بر چه اساسی انجام می‌شود؟",
+                "چگونه بفهمم کدام رشته برای من خوب است؟"
+            ],
+            "responses": [
+                "برای انتخاب رشته مناسب، علاقه، توانایی‌ها و نمرات خود را بررسی کنید.",
+                "به رشته‌هایی که در آن‌ها عملکرد بهتری دارید توجه کنید.",
+                "با مشاور تحصیلی مشورت کنید و درباره بازار کار هر رشته تحقیق کنید.",
+                "به عنوان مثال، اگر به ریاضیات و فیزیک علاقه دارید، ریاضی فیزیک گزینه خوبی است. اگر به زیست‌شناسی و شیمی علاقه دارید، علوم تجربی را انتخاب کنید.",
+                "فعالیت‌های فوق‌برنامه و تجربه‌های کاری مرتبط می‌توانند در تصمیم‌گیری به شما کمک کنند."
+            ],
+            "context": [""]
+        },
+
+
+       
+
+            {
+            "tag": "greeting",
+            "patterns": [
+                "Hello",
+                "How are you?",
+                "Is anyone there?",
+                "Hi, how are you?",
+                "Are you a field advisor?",
+                "Good day",
+                "Greetings to you",
+                "Hello, dear advisor"
+            ],
+            "responses": [
+                "Hello! How can I assist you?",
+                "Greetings! What information do you need about field selection?",
+                "Hi, welcome! Please start by asking your question.",
+                "Hello! I’m ready to answer your questions about field selection."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you very much",
+                "Thank you",
+                "Grateful",
+                "Thanks a lot",
+                "I appreciate it",
+                "You’ve been very kind",
+                "I’m grateful"
+            ],
+            "responses": [
+                "You're welcome!",
+                "Anytime you need help!",
+                "It’s my pleasure.",
+                "I’m here to assist you."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "engineering",
+            "patterns": [
+                "What are the branches of engineering?",
+                "What is the right engineering field for me?",
+                "I want to study engineering",
+                "Is computer engineering good?",
+                "Who is mechanical engineering suitable for?"
+            ],
+            "responses": [
+                "Engineering is a great choice! You can explore computer, electrical, mechanical, chemical, aerospace, or civil engineering.",
+                "For engineering, strong skills in math and physics are essential. Do you have good grades in these subjects?",
+                "Computer engineering is excellent for those interested in programming and IT.",
+                "Chemical engineering is ideal for people interested in chemistry and industrial processes.",
+                "Mechanical engineering is perfect for designing and manufacturing mechanical systems."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "medical",
+            "patterns": [
+                "Who is medicine suitable for?",
+                "Is medicine hard?",
+                "Should I study medicine or dentistry?",
+                "What fields are related to medicine?",
+                "I love biology, what should I do?"
+            ],
+            "responses": [
+                "Medicine requires high scores in biology and chemistry. Do you perform well in these subjects?",
+                "Interested in medicine? You might consider general medicine, dentistry, or pharmacy.",
+                "Medicine demands consistent effort and study but is a highly rewarding profession.",
+                "If you love biology, consider fields like genetics, microbiology, or biotechnology.",
+                "Dentistry is great for those interested in oral and dental health."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "medical_specialties",
+            "patterns": [
+                "What are the branches of medicine?",
+                "What are medical specialties?",
+                "I want to specialize, what should I do?",
+                "What’s the difference between general medicine and specialization?",
+                "What is the surgery field?"
+            ],
+            "responses": [
+                "Medical fields include general medicine, surgery, internal medicine, pediatrics, psychiatry, dermatology, orthopedics, and many more.",
+                "To become a specialist, you first need to complete general medicine and then enter a specialization program.",
+                "Surgery is suitable for those interested in hands-on work and treating patients in the operating room.",
+                "Internal medicine focuses on diagnosing and treating internal body diseases.",
+                "Psychiatry is fascinating for those interested in treating mental disorders."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "arts",
+            "patterns": [
+                "What are the art fields?",
+                "Is art suitable for me?",
+                "I love designing, what should I do?",
+                "What are the requirements for architecture?",
+                "How is the graphic design field?"
+            ],
+            "responses": [
+                "Art-related fields include graphic design, architecture, painting, industrial design, music, and theater.",
+                "Do you have a specific interest in visual or digital arts? It can help guide your choice.",
+                "Creativity and artistic talent are essential for art-related fields.",
+                "Architecture requires designing skills and understanding physical structures.",
+                "Music is ideal for those interested in composing or performing."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "business_management",
+            "patterns": [
+                "What is the management field?",
+                "What skills are needed to enter management?",
+                "How is business management?",
+                "Is financial management hard?",
+                "What is the MBA field?"
+            ],
+            "responses": [
+                "Management is an excellent choice for those interested in leadership and decision-making.",
+                "Management includes various fields like financial, business, human resources, and MBA.",
+                "An MBA is a professional degree with international recognition.",
+                "Financial management is great for those interested in accounting and investments.",
+                "Business management focuses on market analysis and developing business strategies."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "general_advice",
+            "patterns": [
+                "How should I choose a field?",
+                "What field is suitable for me?",
+                "How can I find my interest?",
+                "What factors are important in field selection?",
+                "What criteria exist for field selection?"
+            ],
+            "responses": [
+                "To choose a field, consider your interests, abilities, and grades.",
+                "Think about the careers you like and see which field gets you closer to them.",
+                "Researching job markets can help you make a better choice.",
+                "You can also seek help from educational advisors.",
+                "Extracurricular activities and related work experience can also guide you."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "science",
+            "patterns": [
+                "What are the basic sciences?",
+                "Is physics suitable for me?",
+                "I love chemistry, what should I do?",
+                "How is the biology field?",
+                "Who is earth science suitable for?"
+            ],
+            "responses": [
+                "Basic sciences include physics, chemistry, biology, mathematics, and earth science.",
+                "Physics is suitable for those who enjoy solving complex problems and research.",
+                "Chemistry is fascinating for those interested in studying materials and chemical reactions.",
+                "Biology focuses on the study of living organisms and biological processes.",
+                "Earth science is an excellent choice for those interested in the environment and natural resources."
+            ],
+            "context": [""]
+        },
+     
+        
+
+        {
+            "tag": "math_physics",
+            "patterns": [
+                "What is the Math and Physics field?",
+                "Is the Math field difficult?",
+                "What jobs can I get with a Math degree?",
+                "What skills are needed for Math and Physics?",
+                "What subjects are included in Math and Physics?"
+            ],
+            "responses": [
+                "The Math and Physics field is suitable for those interested in mathematics and physics. It leads to engineering, technology, and computational sciences.",
+                "Mathematics, physics, and chemistry are highly important in this field.",
+                "Students interested in this field often pursue careers in engineering, data science, or theoretical physics.",
+                "If you enjoy solving complex problems, the Math and Physics field is right for you."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "humanities",
+            "patterns": [
+                "What is the Humanities field?",
+                "Who is suited for Humanities?",
+                "What subjects are included in Humanities?",
+                "What jobs are related to Humanities?",
+                "Does Humanities have good job prospects?"
+            ],
+            "responses": [
+                "Humanities focus on the study of human behavior and communication, including fields like psychology, law, management, and social sciences.",
+                "Students who are interested in history, literature, and sociology often choose Humanities.",
+                "This field can lead to careers such as law, journalism, or human resource management.",
+                "If you are interested in analyzing social and human issues, this field is suitable for you."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "experimental_sciences",
+            "patterns": [
+                "What is the Experimental Sciences field?",
+                "What subjects are important in Experimental Sciences?",
+                "Is Experimental Sciences suitable for me?",
+                "What are the job prospects for Experimental Sciences?",
+                "What careers are related to Experimental Sciences?"
+            ],
+            "responses": [
+                "Experimental Sciences involve the study of biology, chemistry, and physics and are suitable for those interested in medicine, pharmacy, and biology.",
+                "In this field, biology is highly important, and grades in this subject influence university admission.",
+                "Related careers include medicine, dentistry, pharmacy, nursing, and laboratory sciences.",
+                "If you are interested in studying life and biological processes, Experimental Sciences is a good choice."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "art",
+            "patterns": [
+                "What branches are there in the Arts field?",
+                "How do I know if Art is right for me?",
+                "What skills are needed for the Arts field?",
+                "What jobs are related to the Arts?",
+                "Does Art have good job opportunities?"
+            ],
+            "responses": [
+                "The Arts field includes graphic design, painting, music, acting, architecture, and industrial design.",
+                "Individuals with creativity and artistic ability often succeed in this field.",
+                "Related careers include graphic designer, architect, visual artist, and industrial designer.",
+                "Job opportunities in Arts depend on individual expertise and skills."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "language",
+            "patterns": [
+                "What does the Language field include?",
+                "Is English a good field of study?",
+                "What should I do to pursue the Language field?",
+                "What jobs are related to the Language field?",
+                "How can I learn a language professionally?"
+            ],
+            "responses": [
+                "The Language field involves studying foreign languages, literature, and translation.",
+                "This field is suitable for those interested in learning new languages and exploring different cultures.",
+                "Related jobs include translator, language teacher, international journalist, and embassy staff.",
+                "Learning a language requires continuous practice and interaction with native speakers."
+            ],
+            "context": [""]
+        },
+        
+        
+       
+        {
+            "tag": "subject_selection",
+            "patterns": [
+                "What is subject selection?",
+                "How do I choose a field of study?",
+                "What are the academic branches?",
+                "Name the fields of study.",
+                "What does subject selection mean?"
+            ],
+            "responses": [
+                "Subject selection is a process where students, after the ninth grade, choose one of the academic branches based on their interests and abilities. These branches include:",
+                "1. Math and Physics: For those interested in mathematics and engineering sciences.",
+                "2. Experimental Sciences: Suitable for those interested in biology, chemistry, and medical fields.",
+                "3. Humanities: An option for those interested in social topics and literature.",
+                "4. Arts: For those who enjoy creativity and design.",
+                "5. Foreign Languages: Suitable for those interested in learning new languages and international careers."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "subject_selection_advice",
+            "patterns": [
+                "How can I choose the right field of study?",
+                "What tips should I follow for subject selection?",
+                "Which field is suitable for me?",
+                "What is the basis for subject selection?",
+                "How do I know which field is right for me?"
+            ],
+            "responses": [
+                "To choose the right field of study, evaluate your interests, abilities, and grades.",
+                "Focus on the fields where you perform better.",
+                "Consult with an academic advisor and research the job market for each field.",
+                "For example, if you are interested in mathematics and physics, Math and Physics is a good option. If you like biology and chemistry, consider Experimental Sciences.",
+                "Extracurricular activities and related work experiences can also help in making your decision."
+            ],
+            "context": [""]
+        }
+    ]  
+    }
+        
+
+        
+
+
+
